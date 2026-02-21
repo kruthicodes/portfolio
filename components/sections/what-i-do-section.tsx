@@ -14,8 +14,8 @@ const cards = [
     desc: "Build production-ready LLM applications, retrieval pipelines, and evaluation frameworks."
   },
   {
-    title: "Speaking & Teaching",
-    desc: "Lead workshops and talks that help teams adopt modern engineering and AI delivery patterns."
+    title: "Tech Educator",
+    desc: "Design and deliver practical learning sessions that simplify engineering, system design, and AI for students and professionals."
   }
 ] as const;
 
