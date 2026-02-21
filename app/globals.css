@@ -1,0 +1,63 @@
+﻿@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --canvas: 0 0% 100%;
+  --ink: 222 47% 11%;
+  --muted: 215 16% 36%;
+  --line: 220 20% 88%;
+  --accent: 262 62% 42%;
+  --card: 0 0% 100%;
+}
+
+.dark {
+  --canvas: 220 25% 9%;
+  --ink: 210 25% 95%;
+  --muted: 214 12% 70%;
+  --line: 217 16% 24%;
+  --accent: 189 90% 58%;
+  --card: 222 25% 13%;
+}
+
+* {
+  @apply border-line;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-canvas text-ink transition-colors duration-500;
+  background-image: none;
+}
+
+.section-pad {
+  @apply py-20 md:py-24;
+}
+
+.surface {
+  @apply rounded-2xl border border-[hsl(var(--line)/0.9)] bg-[hsl(var(--card)/0.92)] backdrop-blur-md shadow-[0_12px_28px_-18px_rgba(15,23,42,0.24)] transition-shadow duration-300;
+}
+
+.section-anchor {
+  scroll-margin-top: 84px;
+}
+
+.nav-link {
+  @apply relative text-sm text-muted transition duration-300 hover:text-ink;
+}
+
+.nav-link::after {
+  content: "";
+  @apply absolute -bottom-1 left-0 h-0.5 w-0 rounded-full bg-accent transition-all duration-300;
+}
+
+.nav-link:hover::after {
+  @apply w-full;
+}
+
+.interactive-card {
+  @apply transition-transform duration-300 hover:-translate-y-1.5 hover:shadow-[0_18px_35px_-16px_rgba(109,40,217,0.34)];
+}
