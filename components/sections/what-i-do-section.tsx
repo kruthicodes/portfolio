@@ -3,27 +3,13 @@
 import { motion } from "framer-motion";
 import { Container } from "@/components/ui/container";
 import { SectionHeading } from "@/components/ui/section-heading";
-
-const cards = [
-  {
-    title: "Engineering",
-    desc: "Design and deliver robust full-stack systems with strong observability and reliability practices."
-  },
-  {
-    title: "AI & Intelligent Systems",
-    desc: "Build production-ready LLM applications, retrieval pipelines, and evaluation frameworks."
-  },
-  {
-    title: "Tech Educator",
-    desc: "Design and deliver practical learning sessions that simplify engineering, system design, and AI for students and professionals."
-  }
-] as const;
+import { siteConfig } from "@/lib/site-config";
 
 export function WhatIDoSection() {
   return (
     <section className="section-anchor section-pad" id="what-i-do">
       <Container>
-        <SectionHeading title="What I Do" subtitle="Engineering depth, AI product thinking, and practical knowledge transfer." />
+        <SectionHeading title={siteConfig.whatIDo.title} subtitle={siteConfig.whatIDo.subtitle} />
 
         <motion.div
           className="grid gap-6 md:grid-cols-3"
@@ -32,7 +18,7 @@ export function WhatIDoSection() {
           viewport={{ once: true, amount: 0.2 }}
           variants={{ show: { transition: { staggerChildren: 0.1 } } }}
         >
-          {cards.map((card) => (
+          {siteConfig.whatIDo.cards.map((card) => (
             <motion.article
               key={card.title}
               variants={{ hidden: { opacity: 0, y: 16 }, show: { opacity: 1, y: 0 } }}

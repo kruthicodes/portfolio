@@ -11,6 +11,30 @@ Production-ready portfolio built with Next.js App Router, TypeScript, Tailwind C
 - Accessibility-conscious semantics and ARIA attributes
 - SEO metadata configured in `app/layout.tsx`
 - Structured sections for projects, AI systems, speaking, mentorship, and contact
+- Config-driven content and section visibility via `lib/site-config.ts`
+
+## Personalization
+
+Edit only `lib/site-config.ts` to customize:
+
+- Profile content (name, summary, email, location, photo)
+- Hero rotating build items
+- About / What I Do / Mentorship / Contact text
+- Section visibility toggles
+
+To hide sections (example for friend portfolio):
+
+```ts
+sections: {
+  about: true,
+  whatIDo: true,
+  projects: false,
+  aiSystems: false,
+  speaking: false,
+  mentorship: false,
+  contact: true
+}
+```
 
 ## Tech Stack
 
@@ -80,6 +104,7 @@ components/
     motion-reveal.tsx
     section-heading.tsx
 lib/
+  site-config.ts
   data.ts
   utils.ts
 ```

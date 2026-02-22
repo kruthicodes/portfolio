@@ -3,19 +3,20 @@
 import Link from "next/link";
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { navItems } from "@/lib/data";
+import { getNavItems, siteConfig } from "@/lib/site-config";
 import { Container } from "@/components/ui/container";
 import { ThemeToggle } from "@/components/theme-toggle";
 
 export function Navigation() {
   const [open, setOpen] = useState(false);
+  const navItems = getNavItems();
 
   return (
     <header className="sticky top-0 z-50 border-b border-line/70 bg-canvas/85 backdrop-blur-md">
       <Container>
         <div className="flex h-16 items-center justify-between">
           <Link href="#" className="font-display text-2xl font-extrabold leading-none tracking-[-0.03em] md:text-3xl">
-            K
+            {siteConfig.profile.monogram}
           </Link>
 
           <nav className="hidden items-center gap-6 md:flex" aria-label="Primary">
